@@ -56,11 +56,8 @@ void unittest()
 {
     printf("standard operator new/delete\n");
     //using namespace operator_new_standard;
-    int *iptr = new int(10);
-    delete iptr;
-
-    char *cptr = new char[100];
-    delete[] cptr;
+    int *ptr = new int(10);
+    delete ptr;
 }
 #endif //operator_new_standard
 
