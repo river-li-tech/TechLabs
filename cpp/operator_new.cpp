@@ -1,3 +1,5 @@
+#pragma warning( disable : 4290 )
+
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
@@ -14,7 +16,7 @@
 
 //#define operator_new_class
 //#define operator_new_standard
-#define operator_new_signature
+//#define operator_new_signature
 
 // ²âÊÔ´úÂë
 class TestBaseClass
@@ -228,6 +230,8 @@ void unittest()
 
 /////////////////////////////////////////////////////////////////
 // ²âÊÔ´úÂë
+//#define OPERATOR_NEW
+#ifdef OPERATOR_NEW
 int main(int argc, char **argv)
 {
     unittest();
@@ -235,3 +239,4 @@ int main(int argc, char **argv)
     getchar();
     return 0;
 }
+#endif //OPERATOR_NEW
