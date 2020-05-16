@@ -66,6 +66,8 @@
   <ItemGroup>
     <ClCompile Include="..\exception.cpp" />
     <ClCompile Include="..\operator_new.cpp" />
+    <ClCompile Include="..\shared_ptr.cpp" />
+    <ClCompile Include="..\shared_ptr2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -12,7 +12,7 @@
 #include <queue>
 #include <memory>
 
-#define EXCEPTION
+//#define EXCEPTION
 
 namespace exception
 {
