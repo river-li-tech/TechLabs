@@ -12,7 +12,7 @@
 #include <queue>
 #include <memory>
 
-#define SHARED_PTR
+//#define SHARED_PTR
 
 namespace sharedptr
 {

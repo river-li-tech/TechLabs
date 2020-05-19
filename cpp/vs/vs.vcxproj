@@ -65,6 +65,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\exception.cpp" />
+    <ClCompile Include="..\memory_leak.cpp" />
     <ClCompile Include="..\operator_new.cpp" />
     <ClCompile Include="..\shared_ptr.cpp" />
     <ClCompile Include="..\shared_ptr2.cpp" />
