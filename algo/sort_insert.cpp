@@ -13,7 +13,7 @@
 #include <queue>
 #include <memory>
 
-#define INSERT_SORT
+//#define INSERT_SORT
 
 namespace INSERT_SORT_NS
 {
@@ -33,39 +33,6 @@ namespace INSERT_SORT_NS
             key = arr[j];
             i = j - 1;
 
-            while (i >= 0 && arr[i] > key) {    // 移动中间的数据
-                arr[i + 1] = arr[i];
-                i--;
-            }
-            arr[i + 1] = key;
-        }
-    }
-
-    // 插入排序-改进插入查找为二分查找，时间复杂度变为NlgN
-    void InsertSort(std::vector<int>& arr)
-    {
-        using std::swap;
-        int len = arr.size();
-        if (len <= 1) {
-            return;
-        }
-
-        int i = 0;
-        int key = 0;
-        for (int j = 1; j < len; j++) {
-            key = arr[j];
-            i = j - 1;
-
-            //使用二分查找
-            int min = 0;
-            int max = j - 1;
-            for (int i = 0; i < std::log2(j); i++) {
-                if (arr[i] == key) {
-
-                }
-
-
-            }
             while (i >= 0 && arr[i] > key) {    // 移动中间的数据
                 arr[i + 1] = arr[i];
                 i--;

@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\add_binary.cpp" />
+    <ClCompile Include="..\maximum_subarray.cpp" />
     <ClCompile Include="..\search_binary.cpp" />
     <ClCompile Include="..\sort_insert.cpp" />
     <ClCompile Include="..\sort_merge.cpp" />
