@@ -96,6 +96,31 @@ namespace MAXIMUM_SUBARRAY_NS
             }
         }
     }
+
+    //////////////////////////////////////////
+    //最大子数组问题-线性解法
+    SubArrayInfo FindmaximumSubarray_Linear(std::vector<int>& vec, int low, int high)
+    {
+        int max_sum = INT_MIN;
+        int left_idx = low;
+        int right_idx = low;
+
+        int sum = 0;
+        int sum_idx = low;
+        for (int i = low; i <= high; i++) {
+            sum += vec[i];
+            if (sum > max_sum) {
+                max_sum = sum;
+                left_idx = sum_idx;
+                right_idx = i;
+            }
+            if (sum < 0) {
+                sum = 0;
+                sum_idx = i + 1;
+            }
+        }
+        return{ left_idx, right_idx, max_sum };
+    }
 }
 
 #ifdef MAXIMUM_SUBARRAY
@@ -104,16 +129,21 @@ namespace MAXIMUM_SUBARRAY_NS
 using namespace MAXIMUM_SUBARRAY_NS;
 int main(int argc, char **argv)
 {
-    std::vector<int> vec = { 1, 2, -3, 2, -1, -3, -1, 4, -2, 5 };
+    //std::vector<int> vec = { 1, 2, -3, 2, -1, -3, -1, 4, -2, 5 };
+    std::vector<int> vec = { -5, -2, -3, -2 };
     //std::vector<int> vec = { -1, 2 };
     //std::vector<int> vec = { -1 };
     // 分治法
     SubArrayInfo info = FindmaximumSubarray(vec, 0, vec.size() - 1);
     printf("low(%d) high(%d) sum(%d)\n", info.low, info.high, info.sum);
-   
+
     // 暴力法
     SubArrayInfo info2 = FindmaximumSubarray_Violence(vec, 0, vec.size() - 1);
     printf("low(%d) high(%d) sum(%d)\n", info2.low, info2.high, info2.sum);
+
+    // 线性法
+    SubArrayInfo info3 = FindmaximumSubarray_Linear(vec, 0, vec.size() - 1);
+    printf("low(%d) high(%d) sum(%d)\n", info3.low, info3.high, info3.sum);
 
     getchar();
     return 0;
